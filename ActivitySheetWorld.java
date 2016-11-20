@@ -13,22 +13,24 @@ public class ActivitySheetWorld extends World
      * Constructor for objects of class ActivitySheetWorld.
      * 
      */
-    public ActivitySheetWorld()
+    public ActivitySheetWorld(String sortType)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 800x900 cells with a cell size of 1x1 pixels.
         super(800, 900, 1); 
-        GreenfootImage image=new GreenfootImage("qsactivitysheet.png");
+      // GetSortingActivity getsa = new GetSortingActivity();
+        //String sort=getsa.getSortType();
+        GreenfootImage sortingbg=null;
+        if(sortType=="quicksort"){
+         sortingbg=new GreenfootImage("qsactivitysheet.png");
+        }
+        else if(sortType=="selectionsort")
+        {
+         sortingbg=new GreenfootImage("ssactivitysheet.png");
+        }  
         prepareActivitySheet();
-        image.setTransparency(0);
-        image.scale(800,900);
-        setBackground(image);
-        
-        GreenfootImage image2=new GreenfootImage("ssactivitysheet.png");
-         prepareActivitySheet();
-        image2.scale(800,900);
-        setBackground(image2);
-       
-        
+        sortingbg.scale(800,900);
+        setBackground(sortingbg);
+    
     }
     
   
