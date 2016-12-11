@@ -8,10 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GetSortingButton extends Button
 {
-    public GetSortingButton()
+    private Player p;
+    public GetSortingButton(Player p)
     {
     GreenfootImage image = getImage() ;
         image.scale( 600, 80 ) ;
+    this.p=p;
     }
     /**
      * Act - do whatever the GetSorting wants to do. This method is called whenever
@@ -20,5 +22,21 @@ public class GetSortingButton extends Button
     public void act() 
     {
         // Add your action code here.
+        
+        
+            if (Greenfoot.mouseClicked(this)) {
+                  
+                    System.out.println("...try me 1");
+                    System.out.println(p.playerName);
+                GetSortingActivity gsa=new GetSortingActivity(p);
+                try{
+                    System.out.println("...try me 2");
+                    gsa.getSortRandomly();
+                }
+                catch(Exception e){
+                }
+                
+            
     }    
+}
 }

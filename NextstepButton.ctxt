@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=NextstepButton
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ NextstepButton\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=world\ typeofsort\ p
+comment1.target=NextstepButton(greenfoot.World,\ java.lang.String,\ Player)
+comment2.params=
+comment2.target=void\ act()
+numComments=3

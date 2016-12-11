@@ -1,21 +1,36 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
+import javax.swing.JOptionPane;
 
-/**
- * Write a description of class EnterGameButton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class EnterGameButton extends Button
 {
-    /**
-     * Act - do whatever the EnterGameButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    boolean flag=false;
+    public String playerName; 
+    Player p=null;
     public void act() 
     {
-        // Add your action code here.
         
+        
+        if(((MyWorld)getWorld()).showbox == true){
+            playerName = JOptionPane.showInputDialog("Enter your name");
+            System.out.println(playerName);
+        
+            p=new Player(playerName);
+            p.setPlayerName(playerName);
+        
+            System.out.println("player Name is "+p.getPlayerName());
+            ((MyWorld)getWorld()).showbox = false;
+            flag=true;
+        }
+        if(flag)
+        {
+        Button b1=getWorld().getObjects(EnterGameButton.class).get(0);
+  
+         if(Greenfoot.mouseClicked(b1))
+        {
+            GetSortingActivity m=new GetSortingActivity(p);
+            Greenfoot.setWorld(m);
+        }
+        }
         
     }    
 }
